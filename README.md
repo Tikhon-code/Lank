@@ -11,8 +11,8 @@
 ```
 
 # Commands
-##echo | printing text
+#### echo | printing text
 
-##ls   | printing files in derictory
+#### ls   | printing files in derictory
 
-##cd   | changes directory
+#### cd   | changes directory
