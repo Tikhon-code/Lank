@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 
+#include "exceptions/escapeerror.cpp"
 
 std::vector<std::string> split(std::string code) {
     std::string current;
@@ -11,6 +12,8 @@ std::vector<std::string> split(std::string code) {
     char quote_char = '\0';
 
     bool escape = false;
+
+    int count_chars = 0;
 
     for (char c : code) {
         if (c == '\\') {
@@ -32,8 +35,11 @@ std::vector<std::string> split(std::string code) {
             else if (c == '\'') {
                 current += "\'";
             }
+            else if (c == 'b'){
+                current += "\b";
+            }
             else {
-                std::cout << "Invalid escape: \\" << c << "\n";
+                EscapeError(code, count_chars, c);
             }
             continue;
         }
@@ -62,6 +68,11 @@ std::vector<std::string> split(std::string code) {
             continue;
         }
         current += c;
+        count_chars++;
+    }
+
+    if (string) {
+        std::cout << "ERROR! two time quote not found!\n";
     }
 
     if (!current.empty()) {

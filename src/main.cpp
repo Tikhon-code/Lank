@@ -9,8 +9,9 @@ void live_mode(std::string prompt = ">>> ") {
     while (true) {
         std::string cmd;
         std::cout << prompt;
+        
         std::getline(std::cin, cmd);
-    
+
         if (cmd.empty()) {
             continue;
         }
