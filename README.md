@@ -1,5 +1,6 @@
 # Lank
  This is simple shell for fun
+# ![LICENSE](https://badgen.net/github/license/Tikhon-code/Lank/)
 
 # Install
 ```bash
