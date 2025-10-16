@@ -1,4 +1,7 @@
 #include <filesystem>
+
+#include "../lib/exceptions/exceptions.h"
+
 std::string sh_cd(std::vector<std::string> cmd) {
     std::string path;
     if (cmd.size() >= 2) {
@@ -10,7 +13,7 @@ std::string sh_cd(std::vector<std::string> cmd) {
     try {
         std::filesystem::current_path(path);
     } catch (const std::filesystem::filesystem_error& err) {
-        std::cerr << "Directory not found: " << path << "\n";
+        DirNotFound(path);
         return "1";
     }
     return "0";

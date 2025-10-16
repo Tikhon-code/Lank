@@ -5,7 +5,7 @@
 #include "lib/lexer.cpp"
 #include "commands/init.cpp"
 
-void live_mode(std::string prompt = ">>> ") {
+void live_mode(std::string prompt = "Lank (unstable 0.0.1)>> ") {
     while (true) {
         std::string cmd;
         std::cout << prompt;
@@ -19,6 +19,8 @@ void live_mode(std::string prompt = ">>> ") {
         std::vector<std::string> lexed_cmd = split(cmd);
     
         std::string ret = exec(lexed_cmd);
+
+        if (ret == "exit") break;
     }
 }
 
@@ -32,13 +34,16 @@ void script_mode(std::string script) {
         }
         std::vector<std::string> lexed_line = split(line);
         std::string ret = exec(lexed_line);
+    
+        if (ret == "exit") break;
     }
 }
 
 int main(int argc, char **argv) {
-    if (argc > 1) {
+    if (argc >= 2) {
         script_mode(argv[1]);
-    } else {
+    }
+    else {
         live_mode();
     }
     return 0;
