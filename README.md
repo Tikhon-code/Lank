@@ -1,5 +1,6 @@
 # Lank
  This is simple shell for fun
+# ![LICENSE](https://badgen.net/github/license/Tikhon-code/Lank/)
 
 # Install
 ```bash
@@ -11,8 +12,8 @@
 ```
 
 # Commands
-##echo | printing text
+#### echo | printing text
 
-##ls   | printing files in derictory
+#### ls   | printing files in derictory
 
-##cd   | changes directory
+#### cd   | changes directory
