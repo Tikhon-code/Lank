@@ -6,8 +6,8 @@
 ```bash
     git clone https://github.com/Tikhon-code/Lank
     cd Lank/build
-    g++ build/build.cpp -o bin/build
-    ./bin/build
+    g++ build/build.cpp -o build/build
+    ./build/build
     cd ../bin
     lank
 ```
