@@ -3,13 +3,13 @@
 #include <iostream>
 #include <algorithm>
 
-#include "exceptions/escapeerror.cpp"
-#include "utils.cpp"
+#include "../exceptions/escapeerror.cpp"
+#include "../utils/utils.cpp"
 
 std::vector<std::string> split(std::string code) {
     std::string current = "";
     std::vector<std::string> all = {};
-    std::vector<char> literals = {'(', ')', ',', '<', '>', '[', ']', '{', '}', '=', '+', '-'};
+    std::vector<char> literals = {'(', ')', ',', '<', '>', '[', ']', '{', '}', '=', '+', '-', ';'};
     
 
     bool string = false;
@@ -22,6 +22,7 @@ std::vector<std::string> split(std::string code) {
     int count_chars = 0;
 
     for (char c : code) {
+        count_chars++;
         if (c == '#') {
             comment = true;
             continue;
@@ -30,6 +31,11 @@ std::vector<std::string> split(std::string code) {
 
         if (c == '\\') {
             escape = true;
+            continue;
+        }
+
+        if (comment && escape && c == 'n') {
+            comment = false;
             continue;
         }
 
@@ -54,6 +60,7 @@ std::vector<std::string> split(std::string code) {
                 current += "\b";
             }
             else {
+                count_chars -= 3;
                 EscapeError(code, count_chars, c);
                 return {""};
             }
@@ -63,6 +70,7 @@ std::vector<std::string> split(std::string code) {
         if (comment) {
             continue;
         }
+
 
         if ((c == '"' || c == '\'') && !string) {
             string = true;
@@ -100,7 +108,7 @@ std::vector<std::string> split(std::string code) {
             continue;
         }
         current += c;
-        count_chars++;
+        
     }
 
     if (string) {
