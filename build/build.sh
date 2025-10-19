@@ -2,6 +2,7 @@ g_compiler="$(which g++ 2>/dev/null)"
 
 if [[ $? == 0 ]]; then
     printf "Compiling..."
+    mkdir ../bin
     $g_compiler ../src/main.cpp -o ../bin/lank
     compile_staus=$?
     
