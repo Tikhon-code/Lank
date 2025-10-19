@@ -1,3 +1,4 @@
+#!/bin/bash
 g_compiler="$(which g++ 2>/dev/null)"
 
 if [[ $? == 0 ]]; then
