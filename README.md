@@ -5,10 +5,10 @@
 # Install (on linux)
 ```bash
     git clone https://github.com/Tikhon-code/Lank
-    cd Lank
+    cd Lank/build
     g++ build/build.cpp -o bin/build
     ./bin/build
-    cd bin
+    cd ../bin
     lank
 ```
 
