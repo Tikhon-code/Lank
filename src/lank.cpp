@@ -10,7 +10,7 @@ std::string run_string(std::string code);
 
 #include "commands/init.cpp"
 
-void live_mode(std::string prompt = "Lank (unstable 0.0.1)>> ") {
+void live_mode(std::string prompt = "Lank (0.0.1)>> ") {
     while (true) {
         std::string cmd;
         std::string ret = "";
