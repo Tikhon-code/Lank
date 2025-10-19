@@ -2,18 +2,27 @@
  This is simple shell for fun
 # ![LICENSE](https://badgen.net/github/license/Tikhon-code/Lank/)
 
-# Install
+# Install (on linux)
 ```bash
-    wget https://github.com/Tikhon-code/Lank
+    git clone https://github.com/Tikhon-code/Lank
     cd Lank
-    python build.py
+    g++ build/build.cpp -o bin/build
+    ./bin/build
     cd bin
-    ./shell
+    lank
 ```
 
 # Commands
-#### echo | printing text
+#### echo  | printing text
 
-#### ls   | printing files in derictory
+#### ls    | printing files in directory
 
-#### cd   | changes directory
+#### cd    | changes directory
+
+#### path  | printing current directory
+
+#### clear | cleaning console
+
+#### cat   | printing file content
+
+#### run   | running .lank script
