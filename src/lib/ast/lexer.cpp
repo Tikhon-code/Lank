@@ -29,7 +29,7 @@ std::vector<std::string> split(std::string code) {
         }
         
 
-        if (c == '\\') {
+        if (c == '\\' && !escape) {
             escape = true;
             continue;
         }
