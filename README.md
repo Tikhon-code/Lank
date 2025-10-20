@@ -1,7 +1,9 @@
 # Lank
  This is simple shell for fun
-# ![ICON](icon.png)
+
 # ![LICENSE](https://badgen.net/github/license/Tikhon-code/Lank/)
+
+# ![ICON](icon.png)
 
 # Install (on linux)
 ```bash
